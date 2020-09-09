@@ -1,0 +1,84 @@
+  .jumbotron {
+    text-align: center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+  }
+
+  #content {
+    border-style: solid;
+    margin: 10px;
+    height: 700px;
+  }
+  
+  #search {
+    /* border-style:solid; */
+    height: 100px;
+
+  }
+
+  #results {
+    margin-top: 50 px;
+    padding: 10 px;
+    /* height: 500px; */
+  }
+  
+  #five-day-results {
+    display: flex;
+    color: white;
+  }
+  
+  .city {
+    margin: 20px;
+  }
+  
+  .green {
+    background-color: green;
+    color: white;
+  }
+  
+  .orange {
+    background-color: orange;
+    color: white;
+  }
+  
+  .red {
+    background-color: red;
+    color: white;
+  }
+  
+  .city-btn {
+    margin: 10px;
+  }
+
+  /* .time-block {
+    text-align: center;
+    border: 1px
+  } */
+
+  #clearButtonContainer {
+    margin-top: 25px;
+    text-align: center;
+  }
+
+  .lead {
+    font-size: 19px;
+    line-height: .5;
+    font-weight: lighter;
+  }
+  
+  .lead2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+    line-height: .6;
+  }
+  
+  .lead3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 30px;
+    line-height: .6;
+  }
+
+  

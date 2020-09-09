@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How 'bout some weather?</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- jumbotron -->
+    <header class="jumbotron" style="background-image: url(storm2.jpg);">
+      <h1 class="display-3">Weather Dashboard</h1>
+      <br>
+
+      <!-- clock???-->
+      <p id="currentDay" class="lead3"></p>
+      <p id="currentDate" class="lead2"></p>
+      <p id="currentTime" class="lead2"></p>
+
+    </header>
+
+    <!-- search bar for city -->
+    <div class="input-group col-md-12">
+      <input type="text" class="form-control" placeholder="Search for a city">
+      <div class="input-group-append">
+        <button class="btn btn-secondary" type="button">Go!</button>
+      </div>
+    </div>
+    <br><br>
+
+
+    <!-- results for current day -->
+    <div id="results" class="col-md-12">
+      <div class="row">
+        <div id="current" class="col-md-12">
+          <!-- <div id="welcome"> -->
+            <p>City Name:</p>
+            <p>Temperature (F):</p>
+            <p>Humidity:</p>
+            <p>Wind Speed:</p>
+            <p>UV Index:</p>
+          <!-- </div> -->
+
+          <div class="city-name"></div>
+          <div class="temp"></div>
+          <div class="humidity"></div>
+          <div class="wind-speed"></div>
+          <div class="uvi">
+            <!-- <span id="uvi"></span> -->
+          </div>
+        </div>
+      </div>
+
+      <br><br>
+      <!-- row to hold the display of 5 day weather content -->
+      <div class="row">
+        <div id="forecast" class="col-md-12">
+          <p>Your Five Day Forecast:</p>
+          <div id="days">
+            <div class="row">
+              <div id="fiveDay" class="col-md-12">
+                <!-- <div id="five-day-results"></div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+  </div>
+
+  <div id="clearButtonContainer"><button class="btn btn-outline-secondary clearButton" id="clearButton">clear
+      all</button></div>
+
+
+  <!-- linking internal js files, moment, and jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script type="text/javascript" src="./script.js"></script>
+</body>
+
+</html>
+
+
+
+
+<!-- weather api key: e91289314fb618ed5bdb0502d166c5ca -->
+
+<!-- 1.	Create html layout for visualization
+    2.	Create ajax call for 5- day weather forecast
+    3.	Generate a city search mechanism
+    4.	Display current weather metrics, with proper css coloring
+    5.	Locate icons reflective of current weather condition. “sun, rain, cloudy”
+    6.	Evaluate current conditions and display appropriate icon
+    7.	Save searches to local storage to be viewed again
+    8.	Display previous search city in button format
+    9.	Display days 2-6 in five day forecast section
+    10.	Convert html framework to dynamic
+ -->
