@@ -19,7 +19,7 @@
       <h1 class="display-3">Weather Dashboard</h1>
       <br>
 
-      <!-- clock???-->
+      <!-- clock-->
       <p id="currentDay" class="lead3"></p>
       <p id="currentDate" class="lead2"></p>
       <p id="currentTime" class="lead2"></p>
@@ -28,62 +28,24 @@
 
     <!-- search bar for city -->
     <div class="input-group col-md-12">
-      <input type="text" class="form-control" placeholder="Search for a city">
+      <input type="text" class="city-input" placeholder="Search for a city">
       <div class="input-group-append">
-        <button class="btn btn-secondary" type="button">Go!</button>
+        <button class="btn btn-secondary go-button" type="button">Go!</button>
       </div>
     </div>
     <br><br>
 
-
     <!-- results for current day -->
-    <div id="results" class="col-md-12">
-      <div class="row">
-        <div id="current" class="col-md-12">
-          <!-- <div id="welcome"> -->
-            <p>City Name:</p>
-            <p>Temperature (F):</p>
-            <p>Humidity:</p>
-            <p>Wind Speed:</p>
-            <p>UV Index:</p>
-          <!-- </div> -->
+    <div id="results">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" id="city-input">City name: </li>
+            <li class="list-group-item" id="temp">Temperature: </li>
+            <li class="list-group-item" id="humidity">Humidity: </li>
+            <li class="list-group-item" id="wind">Wind speed: </li>
+            <!-- <li class="list-group-item" id="uvi">UV: </li> -->
+          </ul>
 
-          <div class="city-name"></div>
-          <div class="temp"></div>
-          <div class="humidity"></div>
-          <div class="wind-speed"></div>
-          <div class="uvi">
-            <!-- <span id="uvi"></span> -->
-          </div>
-        </div>
-      </div>
-
-      <br><br>
-      <!-- row to hold the display of 5 day weather content -->
-      <div class="row">
-        <div id="forecast" class="col-md-12">
-          <p>Your Five Day Forecast:</p>
-          <div id="days">
-            <div class="row">
-              <div id="fiveDay" class="col-md-12">
-                <!-- <div id="five-day-results"></div> -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-
-  </div>
-
-  <div id="clearButtonContainer"><button class="btn btn-outline-secondary clearButton" id="clearButton">clear
-      all</button></div>
-
+          
 
   <!-- linking internal js files, moment, and jquery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -92,9 +54,6 @@
 </body>
 
 </html>
-
-
-
 
 <!-- weather api key: e91289314fb618ed5bdb0502d166c5ca -->
 
