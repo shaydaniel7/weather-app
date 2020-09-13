@@ -1,32 +1,97 @@
   .jumbotron {
+    margin-top: 22px;
     text-align: center;
     background-size: cover;
     color: rgb(255, 255, 255);
+    box-shadow: 5px 4px 4px 0px rgb(150, 149, 149);
   }
 
   .city-input {
     flex: auto;
   }
 
-  .lead {
-    font-size: 19px;
-    line-height: .5;
-    font-weight: lighter;
+  #day1, #day2, #day3, #day4, #day5 {
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    width: 200px;
+    height: 150px;
+    background-image: linear-gradient(160deg, #f1f4f8 10%, #acc6eb 100%);
+    flex: initial;
+    box-shadow: 2px 2px 2px 0px rgb(158, 158, 158);
+    border: none;
   }
-  
-  .lead2 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: lighter;
+
+  .list-group {
+    list-style-type: none;
+  }
+
+  .five-day {
+    justify-content: initial;  
+  }
+
+  .card-title1, .card-title2, .card-title3, .card-title4, .card-title5 {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
     font-size: 20px;
+    line-height: 1;
+  }
+
+  .display-3 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 70px;
+    line-height: 1;
+  }
+
+  .lead2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
     line-height: .6;
+    font-weight: 500;
   }
   
   .lead3 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     text-transform: uppercase;
-    font-weight: lighter;
-    font-size: 30px;
+    font-size: 40px;
     line-height: .6;
+    font-weight: 500;
+  }
+
+  /* #uvi {
+    width: 56px;
+    border-radius: 6px;
+    padding-left: 8px; */
+}
+
+  @media (max-width: 768px) {    
+    #day1, #day2, #day3, #day4, #day5 {
+      width: auto;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+
+    .display-3 {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 40px;
+      line-height: 1;
+    }
+  
+    .lead2 {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: .1;
+    }
+    
+    .lead3 {
+      font-family: 'Courier New', Courier, monospace;
+      text-transform: uppercase;
+      font-size: 25px;
+      font-weight: 500;
+      line-height: .4;
+      }
+  
   }
 
   
