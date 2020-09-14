@@ -48,7 +48,7 @@ $(document).ready(function () {
 
             var fTemp = (data.main.temp * (9 / 5) - 459.67).toFixed(0);
             var cTemp = (data.main.temp - 273).toFixed(0);
-            $("#temp").html("The current temperature is " + fTemp + "&#8457; " + "(" + cTemp + " &#8451;).");
+            $("#temp").html("The current temperature is " + fTemp + "\xB0" + "F " + "(" + cTemp + "\xB0" + "C" + ")" + ".");
 
             var humidityResult = data.main.humidity
             $("#humidity").text("The humidity index is " + humidityResult + "%.");
@@ -88,50 +88,50 @@ $(document).ready(function () {
                 $(".card-title4").html(moment().add(4, 'days').format("l"));
                 $(".card-title5").html(moment().add(5, 'days').format("l"));
 
-                var dayOneTemp = ((data.list[1].main.temp - 273.15) * 1.8 + 32).toFixed(1)
-                $("#temp1").html("temp: " + dayOneTemp + "&#8457;");
+                var dayOneTemp = ((data.list[1].main.temp - 273.15) * 1.8 + 32).toFixed(0)
+                $("#temp1").html("temp: " + dayOneTemp + "\xB0" + "F ");
 
                 var dayOneHumidity = (data.list[1].main.humidity);
                 $("#humidity1").html("humidity: " + dayOneHumidity + "%");
 
-                var dayOneWind = (data.list[1].wind.speed).toFixed(1);
-                $("#wind1").html("wind speed: " + dayOneWind + "mph");
+                var dayOneWind = (data.list[1].wind.speed).toFixed(0);
+                $("#wind1").html("wind speed: " + dayOneWind + " mph");
 
-                var dayTwoTemp = ((data.list[2].main.temp - 273.15) * 1.8 + 32).toFixed(1)
-                $("#temp2").html("temp: " + dayTwoTemp + "&#8457;");
+                var dayTwoTemp = ((data.list[2].main.temp - 273.15) * 1.8 + 32).toFixed(0)
+                $("#temp2").html("temp: " + dayTwoTemp + "\xB0" + "F ");
 
                 var dayTwoHumidity = (data.list[2].main.humidity);
                 $("#humidity2").html("humidity: " + dayTwoHumidity + "%");
 
-                var dayTwoWind = (data.list[2].wind.speed).toFixed(1);
-                $("#wind2").html("wind speed: " + dayTwoWind + "mph");
+                var dayTwoWind = (data.list[2].wind.speed).toFixed(0);
+                $("#wind2").html("wind speed: " + dayTwoWind + " mph");
 
-                var dayThreeTemp = ((data.list[3].main.temp - 273.15) * 1.8 + 32).toFixed(1)
-                $("#temp3").html("temp: " + dayThreeTemp + "&#8457;");
+                var dayThreeTemp = ((data.list[3].main.temp - 273.15) * 1.8 + 32).toFixed(0)
+                $("#temp3").html("temp: " + dayThreeTemp + "\xB0" + "F ");
 
                 var dayThreeHumidity = (data.list[3].main.humidity);
                 $("#humidity3").html("humidity: " + dayThreeHumidity + "%");
 
-                var dayThreeWind = (data.list[3].wind.speed).toFixed(1);
-                $("#wind3").html("wind speed: " + dayThreeWind + "mph");
+                var dayThreeWind = (data.list[3].wind.speed).toFixed(0);
+                $("#wind3").html("wind speed: " + dayThreeWind + " mph");
 
-                var dayFourTemp = ((data.list[4].main.temp - 273.15) * 1.8 + 32).toFixed(1)
-                $("#temp4").html("temp: " + dayFourTemp + "&#8457;");
+                var dayFourTemp = ((data.list[4].main.temp - 273.15) * 1.8 + 32).toFixed(0)
+                $("#temp4").html("temp: " + dayFourTemp + "\xB0" + "F ");
 
                 var dayFourHumidity = (data.list[4].main.humidity);
                 $("#humidity4").html("humidity: " + dayFourHumidity + "%");
 
-                var dayFourWind = (data.list[4].wind.speed).toFixed(1);
-                $("#wind4").html("wind speed: " + dayFourWind + "mph");
+                var dayFourWind = (data.list[4].wind.speed).toFixed(0);
+                $("#wind4").html("wind speed: " + dayFourWind + " mph");
 
-                var dayFiveTemp = ((data.list[5].main.temp - 273.15) * 1.8 + 32).toFixed(1)
-                $("#temp5").html("temp: " + dayFiveTemp + "&#8457;");
+                var dayFiveTemp = ((data.list[5].main.temp - 273.15) * 1.8 + 32).toFixed(0)
+                $("#temp5").html("temp: " + dayFiveTemp + "\xB0" + "F ");
 
                 var dayFiveHumidity = (data.list[5].main.humidity);
                 $("#humidity5").html("humidity: " + dayFiveHumidity + "%");
 
-                var dayFiveWind = (data.list[5].wind.speed).toFixed(1);
-                $("#wind5").html("wind speed: " + dayFiveWind + "mph");
+                var dayFiveWind = (data.list[5].wind.speed).toFixed(0);
+                $("#wind5").html("wind speed: " + dayFiveWind + " mph");
 
             })
         })
