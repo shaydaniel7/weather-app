@@ -26,6 +26,9 @@
 
     </header>
 
+    
+
+
     <!-- search bar for city -->
     <div class="input-group col-md-8">
       <input type="text" class="city-input" placeholder="Search for a city">
@@ -33,19 +36,22 @@
         <button class="btn btn-secondary go-button" type="button">Go</button>
       </div>
 
-      <!-- dropdown button for recent searches -->
 
-      <div class="dropdown">
-        <button id="recents" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">recent searches</button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" id= "recentcities" href="#"></a>
-          <a class="dropdown-item" href="#"></a>
-          <a class="dropdown-item" href="#"></a>
-        </div>
-      </div>
 
     </div>
+
+    <!-- dropdown button for recent searches -->
+
+    <div class="dropdown">
+      <button id="recents" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">recent searches</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" id="recentcities" href="#"></a>
+        <a class="dropdown-item" href="#"></a>
+        <a class="dropdown-item" href="#"></a>
+      </div>
+    </div>
+
 
     <br>
 
@@ -132,10 +138,9 @@
   <!-- linking internal js files, moment, and jquery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script type="text/javascript" src="./script.js"></script>
+  <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
 
 <!-- weather api key: e91289314fb618ed5bdb0502d166c5ca -->
-

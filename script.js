@@ -60,6 +60,8 @@ $(document).ready(function () {
             var lon = (data.coord.lon);
             var uvURL = "https://api.openweathermap.org/data/2.5/uvi?&lat=" + lat + "&lon=" + lon + APIKey;
             console.log(input, "")
+
+
     
             $.ajax({
                 url: uvURL,
@@ -142,6 +144,5 @@ $(document).ready(function () {
 })
 // function to save city searches
 function saveSearch(input){
-    console.log(input);
-
+    console.log(input)
 }

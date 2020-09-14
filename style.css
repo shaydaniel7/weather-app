@@ -7,12 +7,17 @@
   }
 
   .dropdown {
-    margin-left: 60px;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+
+  .city-input {
+    flex: auto;
   }
 
   #day1, #day2, #day3, #day4, #day5 {
     margin: auto;
-    margin-bottom: 20px;
+    margin-top: 20px;
     border-radius: 20px;
     width: 200px;
     height: 150px;
@@ -57,6 +62,8 @@
     line-height: .6;
     font-weight: 500;
   }
+
+  
 
   @media (max-width: 768px) {    
     #day1, #day2, #day3, #day4, #day5 {
