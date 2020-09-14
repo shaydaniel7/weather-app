@@ -30,7 +30,7 @@ $(document).ready(function () {
     // go button event listener
     $(".go-button").on("click", function () {
         var input = $(".city-input").val()
-        var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + input + APIKey;
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + input + APIKey;
         console.log(input, "")
 
 
@@ -40,6 +40,8 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (data) {
             console.log(data)
+
+            saveSearch(input);
 
             var cityName = data.name
             $("#city-input").text("Current weather for " + cityName + ":");
@@ -56,9 +58,11 @@ $(document).ready(function () {
 
             var lat = (data.coord.lat);
             var lon = (data.coord.lon);
-            var uvURL = "http://api.openweathermap.org/data/2.5/uvi?&lat=" + lat + "&lon=" + lon + APIKey;
+            var uvURL = "https://api.openweathermap.org/data/2.5/uvi?&lat=" + lat + "&lon=" + lon + APIKey;
             console.log(input, "")
 
+
+    
             $.ajax({
                 url: uvURL,
                 method: "GET"
@@ -67,11 +71,10 @@ $(document).ready(function () {
 
                 var UV = data.value.toFixed(1)
                 $("#uvi").text("The UV index is " + UV + ".");
-
             })
 
             // call to get five day forecast
-            var fiveDayURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + input + APIKey;
+            var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + input + APIKey;
 
             $.ajax({
                 url: fiveDayURL,
@@ -133,7 +136,14 @@ $(document).ready(function () {
             })
         })
 
+        
+
     })
 
 
 })
+// function to save city searches
+function saveSearch(input){
+    console.log(input);
+    
+}
