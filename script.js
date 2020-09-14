@@ -26,16 +26,11 @@ $(document).ready(function () {
         }
     });
 
-
-    
-
     // save button event listener
     $(".go-button").on("click", function () {
         var input = $(".city-input").val()
         var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + input + APIKey;
         console.log(input, "")
-
-    
 
         $.ajax({
             url: queryURL,
@@ -67,7 +62,7 @@ $(document).ready(function () {
             }).then(function (data) {
                 console.log(data);
 
-                var UV = data.value
+                var UV = data.value.toFixed(1)
                 $("#uvi").text("The UV index is " + UV + ".");
 
             })

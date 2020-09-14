@@ -7,12 +7,10 @@
   }
 
   .dropdown {
-    margin-left: 100px;
+    margin-left: 60px;
   }
 
-  /* .city-input {
-    flex: auto;
-  } */
+
 
   #day1, #day2, #day3, #day4, #day5 {
     margin: auto;
@@ -62,11 +60,7 @@
     font-weight: 500;
   }
 
-  /* #uvi {
-    width: 56px;
-    border-radius: 6px;
-    padding-left: 8px; */
-}
+  
 
   @media (max-width: 768px) {    
     #day1, #day2, #day3, #day4, #day5 {
