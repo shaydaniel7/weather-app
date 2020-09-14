@@ -26,11 +26,16 @@ $(document).ready(function () {
         }
     });
 
+
+    
+
     // save button event listener
     $(".go-button").on("click", function () {
         var input = $(".city-input").val()
         var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + input + APIKey;
         console.log(input, "")
+
+    
 
         $.ajax({
             url: queryURL,
@@ -129,5 +134,12 @@ $(document).ready(function () {
         })
 
     })
+
+// // save button event listener
+// $(".go-button").on("click", function() {
+//     var saveCity = $(this).attr("class");
+//     // var evText = $(this).siblings(".eventText").val();
+//     localStorage.setItem(saveCity);
+// })
 
 })

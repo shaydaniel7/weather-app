@@ -6,9 +6,13 @@
     box-shadow: 5px 4px 4px 0px rgb(150, 149, 149);
   }
 
-  .city-input {
-    flex: auto;
+  .dropdown {
+    margin-left: 100px;
   }
+
+  /* .city-input {
+    flex: auto;
+  } */
 
   #day1, #day2, #day3, #day4, #day5 {
     margin: auto;
