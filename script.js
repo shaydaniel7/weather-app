@@ -2,7 +2,7 @@ $(document).ready(function () {
     console.log("ready!");
 
     var APIKey = "&appid=106619c9ba24756d95c395d6b5ac5e90";
-    // var goButton = $(".go-button");
+    // var goButton = $(".go-button"); do I need this?
 
     getCurrentDay();
     getCurrentTime();
@@ -20,18 +20,21 @@ $(document).ready(function () {
         militaryTime = (moment().format("HH"));
     }
 
+    // enables a user to just hit enter to submit city search
     $(".city-input").keypress(function (event) {
         if (event.keyCode === 13) {
           $(".go-button").click();
         }
     });
 
-    // save button event listener
+    // go button event listener
     $(".go-button").on("click", function () {
         var input = $(".city-input").val()
         var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + input + APIKey;
         console.log(input, "")
 
+
+        // call to get current weather
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -67,6 +70,7 @@ $(document).ready(function () {
 
             })
 
+            // call to get five day forecast
             var fiveDayURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + input + APIKey;
 
             $.ajax({
@@ -74,6 +78,7 @@ $(document).ready(function () {
                 method: "GET"
             }).then(function (data) {
 
+                // adds info to the daily cards
                 $(".card-title1").html(moment().add(1, 'days').format("l"));
                 $(".card-title2").html(moment().add(2, 'days').format("l"));
                 $(".card-title3").html(moment().add(3, 'days').format("l"));
@@ -130,11 +135,5 @@ $(document).ready(function () {
 
     })
 
-// // save button event listener
-// $(".go-button").on("click", function() {
-//     var saveCity = $(this).attr("class");
-//     // var evText = $(this).siblings(".eventText").val();
-//     localStorage.setItem(saveCity);
-// })
 
 })

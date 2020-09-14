@@ -10,8 +10,6 @@
     margin-left: 60px;
   }
 
-
-
   #day1, #day2, #day3, #day4, #day5 {
     margin: auto;
     margin-bottom: 20px;
@@ -59,8 +57,6 @@
     line-height: .6;
     font-weight: 500;
   }
-
-  
 
   @media (max-width: 768px) {    
     #day1, #day2, #day3, #day4, #day5 {
