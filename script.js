@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    console.log("ready!");
+    // console.log("ready!");
 
     var APIKey = "&appid=106619c9ba24756d95c395d6b5ac5e90";
     // var goButton = $(".go-button"); do I need this?
@@ -23,7 +23,7 @@ $(document).ready(function () {
     // enables a user to just hit enter to submit city search
     $(".city-input").keypress(function (event) {
         if (event.keyCode === 13) {
-          $(".go-button").click();
+            $(".go-button").click();
         }
     });
 
@@ -33,15 +33,55 @@ $(document).ready(function () {
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + input + APIKey;
         console.log(input, "")
 
+        saveCityToLS()
+
+        // this is me trying to save to local storage
+        // _______________________________________________________
+
+
+
+        // var searches = document.getElementById("#city-input");
+        // localStorage.setItem(searches, input);
+        // var search;
+        // console.log("")
+
+        // if(localStorage.getItem("searches") === null){
+        //     searches = [];
+        // } else {
+        //     searches = JSON.parse(localStorage.getItem("searches"));
+        // }
+
+        // searches.push(search)
+
+        // localStorage.setItem("searches", JSON.stringify(searches));
+        // var searches = JSON.parse(localStorage.getItem("searches"));
+
+        // searches.forEach(function(search){
+
+        // })
+
+
+        // var storedValue = localStorage.getItem("#city-input");
+
+        // _______________________________________________________
+
+        // this is me trying to save to local storage again
+        // _______________________________________________________
+
+        // function saveCityToLS() {
+        //     var cityToSave = document.getElementById("city-search").value;
+        //     localStorage.setItem("data", cityToSave);
+        //     console.log ("")
+        // }
+
+        // _______________________________________________________
 
         // call to get current weather
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (data) {
-            console.log(data)
-
-            saveSearch(input);
+            // console.log(data)
 
             var cityName = data.name
             $("#city-input").text("Current weather for " + cityName + ":");
@@ -59,15 +99,14 @@ $(document).ready(function () {
             var lat = (data.coord.lat);
             var lon = (data.coord.lon);
             var uvURL = "https://api.openweathermap.org/data/2.5/uvi?&lat=" + lat + "&lon=" + lon + APIKey;
-            console.log(input, "")
+            // console.log(input, "")
 
-
-    
+            // call to get UV index
             $.ajax({
                 url: uvURL,
                 method: "GET"
             }).then(function (data) {
-                console.log(data);
+                // console.log(data);
 
                 var UV = data.value.toFixed(1)
                 $("#uvi").text("The UV index is " + UV + ".");
@@ -136,13 +175,44 @@ $(document).ready(function () {
             })
         })
 
-        
+
 
     })
 
 
 })
+
+
 // function to save city searches
-function saveSearch(input){
-    console.log(input)
+// function addCity(input) {
+//     console.log(input)
+// }
+
+// function getCity(input) {
+//     console.log(input)
+// }
+
+function saveCityToLS() {
+    var cityToSave = document.getElementById("city-search").value;
+    localStorage.setItem("data", cityToSave);
+
+    for (var i = 0; i < localStorage.length; i++){
+        $("#city-search").append(localStorage.getItem(localStorage.key(i)));
+        }
+
+
+    // var citiesList
+    
+
+    // cityToSave.push(citiesList)
+
+
+
+    // if(localStorage.getItem("city-search") === null){
+    //         cityToSave = [];
+    //         localStorage.setItem("data", JSON.stringify(cityToSave))
+    //     } else {
+    //         searches = JSON.parse(localStorage.getItem("city-search"));
+    //     }
+    console.log("")
 }
