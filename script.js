@@ -2,13 +2,30 @@ $(document).ready(function () {
     // console.log("ready!");
 
     var APIKey = "&appid=106619c9ba24756d95c395d6b5ac5e90";
-    // var goButton = $(".go-button"); do I need this?
+    var cityArray = []
+
+    function saveCityToLS(cityToSave) {
+        cityArray.push(cityToSave)
+        console.log(cityArray)
+        console.log("computer")
+
+        localStorage.setItem("data", JSON.stringify(cityArray));
+        console.log ("")   
+
+        var storedCities = []
+        storedCities = JSON.parse(localStorage.getItem("data"));
+
+        for (var i = 0; i < storedCities.length; i++){
+         $("city-search").append(storedCities[i]);
+                }
+
+    }
 
     getCurrentDay();
     getCurrentTime();
     getCurrentDate();
 
-    // clock
+    // clock ---------------------------------
     function getCurrentDay() {
         $("#currentDay").text(moment().format("dddd"));
     }
@@ -16,7 +33,7 @@ $(document).ready(function () {
         $("#currentDate").text(moment().format("MMM Do, YYYY"));
     }
     function getCurrentTime() {
-        $("#currentTime").text(moment().format("h:mma") + " PST");
+        $("#currentTime").text(moment().format("h:mma") + " pst");
         militaryTime = (moment().format("HH"));
     }
 
@@ -27,61 +44,20 @@ $(document).ready(function () {
         }
     });
 
-    // go button event listener
+    // go button event listener -----------------
     $(".go-button").on("click", function () {
         var input = $(".city-input").val()
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + input + APIKey;
         console.log(input, "")
+        var cityToSave = document.getElementById("city-search").value;
+        
+        saveCityToLS(cityToSave);
 
-        saveCityToLS()
-
-        // this is me trying to save to local storage
-        // _______________________________________________________
-
-
-
-        // var searches = document.getElementById("#city-input");
-        // localStorage.setItem(searches, input);
-        // var search;
-        // console.log("")
-
-        // if(localStorage.getItem("searches") === null){
-        //     searches = [];
-        // } else {
-        //     searches = JSON.parse(localStorage.getItem("searches"));
-        // }
-
-        // searches.push(search)
-
-        // localStorage.setItem("searches", JSON.stringify(searches));
-        // var searches = JSON.parse(localStorage.getItem("searches"));
-
-        // searches.forEach(function(search){
-
-        // })
-
-
-        // var storedValue = localStorage.getItem("#city-input");
-
-        // _______________________________________________________
-
-        // this is me trying to save to local storage again
-        // _______________________________________________________
-
-        // function saveCityToLS() {
-        //     var cityToSave = document.getElementById("city-search").value;
-        //     localStorage.setItem("data", cityToSave);
-        //     console.log ("")
-        // }
-
-        // _______________________________________________________
-
-        // call to get current weather
+        // call to get current weather --------------------
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (data) {
-            // console.log(data)
 
             var cityName = data.name
             $("#city-input").text("Current weather for " + cityName + ":");
@@ -101,18 +77,17 @@ $(document).ready(function () {
             var uvURL = "https://api.openweathermap.org/data/2.5/uvi?&lat=" + lat + "&lon=" + lon + APIKey;
             // console.log(input, "")
 
-            // call to get UV index
+            // call to get UV index ----------------------------
             $.ajax({
                 url: uvURL,
                 method: "GET"
             }).then(function (data) {
-                // console.log(data);
 
                 var UV = data.value.toFixed(1)
                 $("#uvi").text("The UV index is " + UV + ".");
             })
 
-            // call to get five day forecast
+            // call to get five day forecast --------------------
             var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + input + APIKey;
 
             $.ajax({
@@ -120,7 +95,7 @@ $(document).ready(function () {
                 method: "GET"
             }).then(function (data) {
 
-                // adds info to the daily cards
+                // adds info to the daily cards -----------------
                 $(".card-title1").html(moment().add(1, 'days').format("l"));
                 $(".card-title2").html(moment().add(2, 'days').format("l"));
                 $(".card-title3").html(moment().add(3, 'days').format("l"));
@@ -171,48 +146,12 @@ $(document).ready(function () {
 
                 var dayFiveWind = (data.list[5].wind.speed).toFixed(0);
                 $("#wind5").html("wind speed: " + dayFiveWind + " mph");
-
             })
         })
-
-
-
     })
-
-
 })
 
-
-// function to save city searches
-// function addCity(input) {
-//     console.log(input)
-// }
-
-// function getCity(input) {
-//     console.log(input)
-// }
-
 function saveCityToLS() {
-    var cityToSave = document.getElementById("city-search").value;
-    localStorage.setItem("data", cityToSave);
-
-    for (var i = 0; i < localStorage.length; i++){
-        $("#city-search").append(localStorage.getItem(localStorage.key(i)));
-        }
-
-
-    // var citiesList
-    
-
-    // cityToSave.push(citiesList)
-
-
-
-    // if(localStorage.getItem("city-search") === null){
-    //         cityToSave = [];
-    //         localStorage.setItem("data", JSON.stringify(cityToSave))
-    //     } else {
-    //         searches = JSON.parse(localStorage.getItem("city-search"));
-    //     }
-    console.log("")
 }
+        
+

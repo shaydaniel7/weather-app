@@ -2,139 +2,139 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>How 'bout some weather?</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>How 'bout some weather?</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <div class="container">
+    <div class="container">
 
-    <!-- jumbotron -->
-    <header class="jumbotron" style="background-image: url(storm2.jpg);">
-      <h1 class="display-3">Weather Dashboard</h1>
-      <br>
+        <!-- jumbotron -->
+        <header class="jumbotron" style="background-image: url(storm2.jpg);">
+            <h1 class="display-3">weather dashboard</h1>
+            <br>
 
-      <!-- clock-->
-      <p id="currentDay" class="lead3"></p>
-      <p id="currentDate" class="lead2"></p>
-      <p id="currentTime" class="lead2"></p>
+            <!-- clock-->
+            <p id="currentDay" class="lead3"></p>
+            <p id="currentDate" class="lead2"></p>
+            <p id="currentTime" class="lead2"></p>
 
-    </header>
+        </header>
 
-    <!-- search bar for city -->
-    <div class="input-group col-md-8">
-      <input type="text" class="city-input" placeholder="Search for a city" id="city-search">
-      <div class="input-group-append">
-        <button class="btn btn-secondary go-button" onclick=saveCityToLS() type="button">Go</button>
-      </div>
+        <!-- search bar for city -->
+        <div class="input-group col-md-8">
+            <input type="text" class="city-input" placeholder="search for a city" id="city-search">
+            <div class="input-group-append">
+                <button class="btn btn-secondary go-button" onclick=saveCityToLS() type="button">go</button>
+            </div>
 
+        </div>
+
+        <!-- dropdown button for recent searches -->
+
+        <div class="dropdown">
+            <button id="recents" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">recent searches</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" id="recentcities" href="#"></a>
+                <a class="dropdown-item" href="#"></a>
+                <a class="dropdown-item" href="#"></a>
+            </div>
+        </div>
+
+
+        <br>
+
+        <!-- results for current day -->
+        <div id="results">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" id="city-input">city name: </li>
+                <li class="list-group-item" id="temp">temperature: </li>
+                <li class="list-group-item" id="humidity">humidity: </li>
+                <li class="list-group-item" id="wind">wind speed: </li>
+                <li class="list-group-item" id="uvi">uv index: </li>
+            </ul>
+
+        </div>
+        <br>
+
+        <!-- five day forecast -->
+        <div class="five-day">
+            <div class="card-deck">
+                <div class="card border-dark" id="day1">
+                    <div class="card-header1"></div>
+                    <div class="card-body text-dark">
+                        <h6 class="card-title1"></h6>
+                        <ul class="list-group list-group-flush">
+                            <li id="temp1"></li>
+                            <li id="humidity1"></li>
+                            <li id="wind1"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card border-dark" id="day2">
+                    <div class="card-header2"></div>
+                    <div class="card-body text-dark">
+                        <h6 class="card-title2"></h6>
+                        <ul class="list-group list-group-flush">
+                            <li id="temp2"></li>
+                            <li id="humidity2"></li>
+                            <li id="wind2"></li>
+                        </ul>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+                <div class="card border-dark" id="day3">
+                    <div class="card-header3"></div>
+                    <div class="card-body text-dark">
+                        <h6 class="card-title3"></h6>
+                        <ul class="list-group list-group-flush">
+                            <li id="temp3"></li>
+                            <li id="humidity3"></li>
+                            <li id="wind3"></li>
+                        </ul>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+                <div class="card border-dark" id="day4">
+                    <div class="card-header4"></div>
+                    <div class="card-body text-dark">
+                        <h6 class="card-title4"></h6>
+                        <ul class="list-group list-group-flush">
+                            <li id="temp4"></li>
+                            <li id="humidity4"></li>
+                            <li id="wind4"></li>
+                        </ul>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+                <div class="card border-dark" id="day5">
+                    <div class="card-header5"></div>
+                    <div class="card-body text-dark">
+                        <h6 class="card-title5"></h6>
+                        <ul class="list-group list-group-flush">
+                            <li id="temp5"></li>
+                            <li id="humidity5"></li>
+                            <li id="wind5"></li>
+                        </ul>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <br><br>
 
-    <!-- dropdown button for recent searches -->
-
-    <div class="dropdown">
-      <button id="recents" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">recent searches</button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" id="recentcities" href="#"></a>
-        <a class="dropdown-item" href="#"></a>
-        <a class="dropdown-item" href="#"></a>
-      </div>
-    </div>
-
-
-    <br>
-
-    <!-- results for current day -->
-    <div id="results">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item" id="city-input">City name: </li>
-        <li class="list-group-item" id="temp">Temperature: </li>
-        <li class="list-group-item" id="humidity">Humidity: </li>
-        <li class="list-group-item" id="wind">Wind speed: </li>
-        <li class="list-group-item" id="uvi">UV index: </li>
-      </ul>
-
-    </div>
-    <br>
-
-    <!-- five day forecast -->
-    <div class="five-day">
-      <div class="card-deck">
-        <div class="card border-dark" id="day1">
-          <div class="card-header1"></div>
-          <div class="card-body text-dark">
-            <h6 class="card-title1"></h6>
-            <ul class="list-group list-group-flush">
-              <li id="temp1"></li>
-              <li id="humidity1"></li>
-              <li id="wind1"></li>
-            </ul>
-          </div>
-        </div>
-        <div class="card border-dark" id="day2">
-          <div class="card-header2"></div>
-          <div class="card-body text-dark">
-            <h6 class="card-title2"></h6>
-            <ul class="list-group list-group-flush">
-              <li id="temp2"></li>
-              <li id="humidity2"></li>
-              <li id="wind2"></li>
-            </ul>
-            <p class="card-text"></p>
-          </div>
-        </div>
-        <div class="card border-dark" id="day3">
-          <div class="card-header3"></div>
-          <div class="card-body text-dark">
-            <h6 class="card-title3"></h6>
-            <ul class="list-group list-group-flush">
-              <li id="temp3"></li>
-              <li id="humidity3"></li>
-              <li id="wind3"></li>
-            </ul>
-            <p class="card-text"></p>
-          </div>
-        </div>
-        <div class="card border-dark" id="day4">
-          <div class="card-header4"></div>
-          <div class="card-body text-dark">
-            <h6 class="card-title4"></h6>
-            <ul class="list-group list-group-flush">
-              <li id="temp4"></li>
-              <li id="humidity4"></li>
-              <li id="wind4"></li>
-            </ul>
-            <p class="card-text"></p>
-          </div>
-        </div>
-        <div class="card border-dark" id="day5">
-          <div class="card-header5"></div>
-          <div class="card-body text-dark">
-            <h6 class="card-title5"></h6>
-            <ul class="list-group list-group-flush">
-              <li id="temp5"></li>
-              <li id="humidity5"></li>
-              <li id="wind5"></li>
-            </ul>
-            <p class="card-text"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<br><br>
-
-  <!-- linking internal js files, moment, and jquery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+    <!-- linking internal js files, moment, and jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>

@@ -15,10 +15,10 @@
     margin-top: 15px;
   }
 
-  .go-button {
+  /* .go-button {
     margin-left: 15px;
-    /* margin-top: 15px; */
-  }
+    margin-top: 15px;
+  } */
 
   .city-input {
     flex: auto;
@@ -56,7 +56,7 @@
   .display-3 {
    font-family: 'Comfortaa', cursive;    
    font-size: 70px;
-   line-height: 1.1;
+   line-height: 1.2;
   }
 
   .lead2 {
@@ -68,7 +68,7 @@
   
   .lead3 {
     font-family: 'Comfortaa', cursive;
-    /* text-transform: uppercase; */
+    text-transform: lowercase;
     font-size: 40px;
     line-height: .9;
     font-weight: 500;
@@ -93,15 +93,15 @@
       font-family: 'Comfortaa', cursive;
       font-size: 14px;
       font-weight: 500;
-      line-height: .1;
+      line-height: .3;
     }
     
     .lead3 {
       font-family: 'Comfortaa', cursive;
-      text-transform: uppercase;
+      text-transform: lowercase;
       font-size: 25px;
       font-weight: 500;
-      line-height: .4;
+      line-height: .6;
       }
   
   }
