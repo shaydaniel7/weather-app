@@ -267,5 +267,5 @@ $(document).ready(function () {
     })
 })
 
-
+// <!-- weather api key: e91289314fb618ed5bdb0502d166c5ca -->
 
