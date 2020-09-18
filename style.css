@@ -20,6 +20,11 @@
     margin-top: 15px;
   } */
 
+  #searchedCities {
+    margin-left: 25px;
+    margin-right: 25px
+  }
+
   .city-input {
     flex: auto;
   }
