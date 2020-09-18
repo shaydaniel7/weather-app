@@ -37,7 +37,6 @@ Moment.js, Bootstrap, HTML, CSS, JavaScript and jQuery.
 
 ### Screenshot:
 
-<img width="1050" alt="screenshot" src="https://user-images.githubusercontent.com/67557233/93034471-fc2c3a80-f5ee-11ea-8f64-8bf61aa07b55.png">
 
 
 ### Info:
