@@ -1,9 +1,7 @@
 $(document).ready(function () {
-    // console.log("ready!");
 
     var APIKey = "&appid=106619c9ba24756d95c395d6b5ac5e90";
     var cityArray = []
-    var city = $("#city-search").val();
 
     if (localStorage.getItem("data") === null) {
         var cities = [];
@@ -13,7 +11,8 @@ $(document).ready(function () {
     } else {
         var doneCities = JSON.parse(localStorage.getItem("data"));
         doneCities.forEach(city => {
-            var newButton = $(`<button type="button" class="btn btn-light searchedCities"></button>`);
+            var newButton = $(`<button type="button" class="btn btn-light new-buttons"></button>`);
+            var city = $("#city-search").val();
             newButton.text(city);
             newButton.appendTo("#searchedCities");
         })
@@ -24,14 +23,13 @@ $(document).ready(function () {
         localStorage.setItem("data", JSON.stringify(cityArray));
         console.log("")
 
-        var storedCities = []
-        storedCities = JSON.parse(localStorage.getItem("data"));
+        // var storedCities = []
+        // storedCities = JSON.parse(localStorage.getItem("data"));
 
         for (var i = 0; i < storedCities.length; i++) {
-            $("city-search").append(storedCities[i]);
+            $("#city-search").append(storedCities[i]);
         }
     }
-
     getCurrentDay();
     getCurrentTime();
     getCurrentDate();
@@ -61,7 +59,7 @@ $(document).ready(function () {
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + input + APIKey;
         console.log(input, "")
         var cityToSave = document.getElementById("city-search").value;
-
+    
         saveCityToLS(cityToSave);
 
         // call to get current weather --------------------
@@ -86,7 +84,6 @@ $(document).ready(function () {
             var lat = (data.coord.lat);
             var lon = (data.coord.lon);
             var uvURL = "https://api.openweathermap.org/data/2.5/uvi?&lat=" + lat + "&lon=" + lon + APIKey;
-            // console.log(input, "")
 
             // call to get UV index ----------------------------
             $.ajax({
@@ -161,11 +158,11 @@ $(document).ready(function () {
         })
     })
 
-    $(".searchedCities").on("click", function () {
-        var input = $(".searchedCities").text()
+    $("#searchedCities").on("click", function () {
+        var input = $("#searchedCities").text()
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + input + APIKey;
         console.log(input, "")
-        var cityToSave = document.getElementById("city-search").value;
+        var cityToSave = document.getElementById("#city-search").value;
 
         saveCityToLS(cityToSave);
 
@@ -191,7 +188,6 @@ $(document).ready(function () {
             var lat = (data.coord.lat);
             var lon = (data.coord.lon);
             var uvURL = "https://api.openweathermap.org/data/2.5/uvi?&lat=" + lat + "&lon=" + lon + APIKey;
-            // console.log(input, "")
 
             // call to get UV index ----------------------------
             $.ajax({
@@ -266,6 +262,4 @@ $(document).ready(function () {
         })
     })
 })
-
-// <!-- weather api key: e91289314fb618ed5bdb0502d166c5ca -->
 
