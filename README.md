@@ -36,6 +36,7 @@ In this activity, students are meant to become familiar working with APIs, namel
 Moment.js, Bootstrap, HTML, CSS, JavaScript and jQuery.
 
 ### Screenshot:
+<img width="1035" alt="screenshot" src="https://user-images.githubusercontent.com/67557233/93553407-be4d5000-f927-11ea-860b-9f90df46592e.png">
 
 
 
