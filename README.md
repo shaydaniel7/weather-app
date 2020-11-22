@@ -11,6 +11,7 @@ Moment.js, Bootstrap, HTML, CSS, JavaScript and jQuery.
 
 ### Info:
 Deployed application URL: https://shaydaniel7.github.io/weather-app/
+
 Github repository URL: https://github.com/shaydaniel7/weather-app/
 
 ### Contact Info:
